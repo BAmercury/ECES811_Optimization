@@ -50,6 +50,7 @@ A = np.array([
     [0,0,0,0,0,0,0,0,0,1],
 
     ])
+print(np.linalg.matrix_rank(A))
 b = [1,2,2,2,-1,-1,-1,0,0,0,0,0,0,0]
 c = '[=,=,=,=,=,=,=,>=,>=,>=,>=,>=,>=,>=]'
 ans = ph.extreme_points(A,b,c)
@@ -57,4 +58,7 @@ new_array = [tuple(row) for row in ans]
 uniques = np.unique(new_array, axis=0)
 print(ans)
 
-
+idx_cols = [0,1,2,3,4,5,6]
+data = A[:,idx_cols]
+print(data)
+print(np.linalg.matrix_rank(data))
